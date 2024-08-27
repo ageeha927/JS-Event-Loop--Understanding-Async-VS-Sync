@@ -6,8 +6,10 @@ setTimeout(() => {
 console.log("End of script")
 
 //Problem #2
-console.log("Interval started (sync)")
+console.log("Interval started")
+const interval = setInterval(() => {
+    console.log("Repeating message...")
+}, 3000)
 setTimeout(() => {
-setInterval(() => {
-    console.log("Repeating message... (async)")
-}, "3000")}, "10000")
+    clearInterval(interval)
+}, 10000)
