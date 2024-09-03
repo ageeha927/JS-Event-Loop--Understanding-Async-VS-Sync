@@ -34,6 +34,21 @@ setTimeout(() => { //async
 console.log("Script complete")
 
 //Problem 5
-console.log("Count down started")
-
+console.log("Countdown initiated...")
+const delay = ms => {
+    const start = Date.now()
+    while (Date.now() - start < ms) {}
+}
+delay(3000)
+let count = 10
+const intervalId = setInterval(() => {
+    console.log(count)
+    count--
+    if (count < 0) {
+    clearInterval(intervalId)
+    setTimeout(() => {
+        console.log("Liftoff!")
+    }, 0)
+    }
+}, 1000)
 
